@@ -6,6 +6,7 @@ import Response from '../components/AssessmentDisplay';
 import Topbar from '../components/Topbar';
 import { RequestStatus, Assessment } from '../types';
 import AssessmentDisplay from '../components/AssessmentDisplay';
+import GlobalStyle from '../GlobalStyle';
 
 interface props {
   style?: React.CSSProperties,
@@ -36,6 +37,7 @@ const App : React.FC<PropsWithChildren<props>> = () => {
   }
   return (
     <Wrapper data-css='App'>
+      <GlobalStyle />
       <Topbar 
         requestStatus={requestStatue}
         setRequestStatus={setRequestStatus}
@@ -51,7 +53,7 @@ const App : React.FC<PropsWithChildren<props>> = () => {
         />
         {assessment
           ? <AssessmentDisplay assessment={assessment} />
-          : <p>info</p>}
+          : null}
     </Wrapper>
   )
 }

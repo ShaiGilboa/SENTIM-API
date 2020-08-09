@@ -20,11 +20,11 @@ const Description : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRe
 export default Description;
 
 const Wrapper = styled.p`
-  background-color: ${COLORS.Secondary};
-  color: ${COLORS.TextSecondary};
   width: fit-content;
   padding: 10px;
   margin: 5px auto;
   border-radius: 5px;
   text-align: center;
+  color: black;
+  font-size: 20px;
 `;

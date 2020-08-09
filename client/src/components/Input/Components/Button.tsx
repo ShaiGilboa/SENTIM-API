@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 import { COLORS } from '../../../constants';
 
 const Button = styled(motion.button)`
-  background-color: ${COLORS.Main};
+  background-color: ${COLORS.Button};
   width: fit-content;
   padding: 3px 5px;
   color: ${COLORS.Text};
   margin: 5px auto;
   border-radius: 10px;
   outline: none;
+  border: none;
 `;
 
 export default Button;
