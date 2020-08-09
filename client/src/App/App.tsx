@@ -13,7 +13,25 @@ interface props {
 const App : React.FC<PropsWithChildren<props>> = () => {
 
   const [requestStatue, setRequestStatus] = useState<RequestStatus>({status: 'idle'})
+  const [assessment, setAssessment] = useState<string | undefined>(undefined)
 
+  const getAssessment = (text : string) => {
+    setRequestStatus({
+      status: "sent"
+    })
+    const body = {text}
+    fetch('https://sentim-api.herokuapp.com/api/v1/', {
+      method: "POST",
+      headers: {
+        Accept: "application/josn",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+      .then(res => res.json())
+      .then(res => console.log('res', res))
+      .catch( err => console.log('err', err))
+  }
   return (
     <Wrapper data-css='App'>
       <Topbar 
@@ -27,7 +45,11 @@ const App : React.FC<PropsWithChildren<props>> = () => {
       <Input 
         requestStatus={requestStatue}
         setRequestStatus={setRequestStatus}
+        getAssessment={getAssessment}
         />
+        {assessment
+          ? <p>{assessment}</p>
+          : <p>info</p>}
     </Wrapper>
   )
 }

@@ -6,16 +6,18 @@ import Button from './Components/Button';
 
 interface props extends RequestProp {
   style?: React.CSSProperties,
-  
+  getAssessment: any,
 };
 
-const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestStatus }) => {
+const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestStatus, getAssessment }) => {
 
   const [text, setText] = useState<string | undefined>(undefined)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('text', text)
+    if(text){
+      getAssessment(text);
+    }
   } 
 
   return (
@@ -26,7 +28,7 @@ const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestS
         value={text}
         onChange={(event)=>setText(event.target.value)}
       />
-      <Button type="submit" name="text">Asses</Button>
+      <Button type="submit" name="text">Assess</Button>
     </Wrapper>
   )
 }
