@@ -11,7 +11,7 @@ const Description : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRe
 
   return (
     <Wrapper data-css='Description'>
-      Input the text you wish to check, and using the API you will get a score on the sentiment:
+      Input the text you wish to check, and using the <a href="https://sentim-api.herokuapp.com/">SENTIM-API</a> you will get a score on the sentiment:
     </Wrapper>
   )
 }
