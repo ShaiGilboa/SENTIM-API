@@ -1,5 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
+import Description from '../components/Description';
+import Input from '../components/Input';
+import Topbar from '../components/Topbar';
 
 interface props {
   style?: React.CSSProperties,
@@ -10,7 +13,9 @@ const App : React.FC<PropsWithChildren<props>> = () => {
 
   return (
     <Wrapper data-css='App'>
-      App
+      <Topbar />
+      <Description />
+      <Input />
     </Wrapper>
   )
 }
@@ -18,5 +23,6 @@ const App : React.FC<PropsWithChildren<props>> = () => {
 export default App;
 
 const Wrapper = styled.div`
-
+  width: 100%;
+  height: 100%;
 `;
