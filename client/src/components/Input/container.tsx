@@ -1,5 +1,7 @@
 import React, { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
+import { motion } from "framer-motion";
+
 import Textarea from './Components/Textarea';
 import { RequestProp } from '../../types';
 import Button from './Components/Button';
@@ -28,7 +30,11 @@ const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestS
         value={text}
         onChange={(event)=>setText(event.target.value)}
       />
-      <Button type="submit" name="text">Assess</Button>
+      <Button type="submit" name="submit"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >Assess
+      </Button>
     </Wrapper>
   )
 }

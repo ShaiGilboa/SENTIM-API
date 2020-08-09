@@ -13,6 +13,7 @@
     "@types/styled-components": "^5.1.2"
   },
   "dependencies": {
+    "framer-motion": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
