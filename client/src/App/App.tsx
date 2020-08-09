@@ -1,8 +1,9 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import Description from '../components/Description';
 import Input from '../components/Input';
 import Topbar from '../components/Topbar';
+import { RequestStatus } from '../types';
 
 interface props {
   style?: React.CSSProperties,
@@ -11,11 +12,22 @@ interface props {
 
 const App : React.FC<PropsWithChildren<props>> = () => {
 
+  const [requestStatue, setRequestStatus] = useState<RequestStatus>({status: 'idle'})
+
   return (
     <Wrapper data-css='App'>
-      <Topbar />
-      <Description />
-      <Input />
+      <Topbar 
+        requestStatus={requestStatue}
+        setRequestStatus={setRequestStatus}
+        />
+      <Description
+        requestStatus={requestStatue}
+        setRequestStatus={setRequestStatus}
+        />
+      <Input 
+        requestStatus={requestStatue}
+        setRequestStatus={setRequestStatus}
+        />
     </Wrapper>
   )
 }

@@ -1,13 +1,14 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { COLORS } from '../../constants';
+import { RequestProp } from '../../types';
 
-interface props {
+interface props extends RequestProp {
   style?: React.CSSProperties,
   
 };
 
-const Description : React.FC<PropsWithChildren<props>> = () => {
+const Description : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestStatus }) => {
 
   return (
     <Wrapper data-css='Description'>
