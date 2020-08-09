@@ -12,6 +12,7 @@ const Button = styled(motion.button)`
   border-radius: 10px;
   outline: none;
   border: none;
+  font-size: 20px;
 `;
 
 export default Button;

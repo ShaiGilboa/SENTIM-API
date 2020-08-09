@@ -1,9 +1,11 @@
 import React, { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import Textarea from './Components/Textarea';
 import { RequestProp } from '../../types';
 import Button from './Components/Button';
+import { COLORS } from '../../constants';
 
 interface props extends RequestProp {
   style?: React.CSSProperties,
@@ -12,12 +14,15 @@ interface props extends RequestProp {
 
 const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestStatus, getAssessment }) => {
 
-  const [text, setText] = useState<string | undefined>(undefined)
+  const [text, setText] = useState<string>('')
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if(text){
+    getAssessment('');
+    if(text.length){
       getAssessment(text);
+    } else {
+      setRequestStatus({status: 'error', error: 'please enter a sentiment to check'})
     }
   } 
 
@@ -25,6 +30,10 @@ const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestS
     <Wrapper data-css='Input'
       onSubmit={(event) => handleSubmit(event)}
     >
+      <Clear
+        onClick={()=>setText('')}
+        whileTap={{ scale: 0.9 }}
+      >X</Clear>
       <Textarea 
         value={text}
         onChange={(event)=>setText(event.target.value)}
@@ -42,6 +51,28 @@ export default Input;
 
 const Wrapper = styled.form`
   display: flex;
-  justify-items: center;
   flex-direction: column;
+  justify-content: space-around;
+  width: fit-content;
+  margin: 0 auto;
+`;
+
+const Clear = styled(motion.div)`
+  width: 20px;
+  height: 20px;
+  position: relative;
+  color: ${COLORS.TextSecondary};
+  background-color: ${COLORS.Button};
+  border-radius: 50%;
+  text-align: center;
+  text-align: center;
+  font-size: 20px;
+  top: 0;
+  left: calc(100% - 20px);
+  padding: 3px 0 0 1px;
+  margin: 2px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

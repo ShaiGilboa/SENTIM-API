@@ -9,10 +9,13 @@ const Summary = styled(motion.div)`
   border-radius: 10px;
   margin: 5px auto;
 
+  div {
+    margin: 5px;
+    padding: 0;
+  }
   p {
     margin: 5px;
     padding: 0;
-    display: inline-block;
   }
 `;
 

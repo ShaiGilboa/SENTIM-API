@@ -77,8 +77,9 @@ table {
 
 #root {
   width: 100%;
+	/* min-height: 100vh; */
   height: 100%;
-	padding-top: 10px;
+	/* padding-top: 10px; */
 }
 `;
 

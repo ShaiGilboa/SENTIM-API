@@ -6,4 +6,5 @@ export enum COLORS {
   BackgroundDark = "#26127c",
   BackgroundLight = "#d2d9f2",
   TextSecondary = "#FDF2F5",
+  TextError = "#ff3333",
 }

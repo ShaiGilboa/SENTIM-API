@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { COLORS } from '../../constants';
 import { RequestProp } from '../../types';
 
 interface props extends RequestProp {
