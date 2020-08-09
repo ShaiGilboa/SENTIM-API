@@ -71,7 +71,7 @@ const App : React.FC<PropsWithChildren<props>> = () => {
           </AnimatePresence>
       </Content>
       <Footer>
-        <p>Created By: Shai Gilboa | <a href="https://github.com/ShaiGilboa">GitHub</a> | <a href="https://www.linkedin.com/in/shai-gilboa/">LinkedIn</a> | <a href="https://github.com/ShaiGilboa/SENTIM-API">Repo</a></p>
+        <p>Created By: Shai Gilboa | <a href="https://github.com/ShaiGilboa" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/shai-gilboa/" target="_blank">LinkedIn</a> | <a href="https://github.com/ShaiGilboa/SENTIM-API" target="_blank">Repo</a></p>
       </Footer>
     </Wrapper>
   )
