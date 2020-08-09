@@ -26,4 +26,9 @@ const Wrapper = styled.p`
   text-align: center;
   color: black;
   font-size: 20px;
+
+  a {
+    text-decoration: underline;
+    color: black;
+  }
 `;
