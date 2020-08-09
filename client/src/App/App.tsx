@@ -2,8 +2,10 @@ import React, { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import Description from '../components/Description';
 import Input from '../components/Input';
+import Response from '../components/AssessmentDisplay';
 import Topbar from '../components/Topbar';
-import { RequestStatus } from '../types';
+import { RequestStatus, Assessment } from '../types';
+import AssessmentDisplay from '../components/AssessmentDisplay';
 
 interface props {
   style?: React.CSSProperties,
@@ -13,7 +15,7 @@ interface props {
 const App : React.FC<PropsWithChildren<props>> = () => {
 
   const [requestStatue, setRequestStatus] = useState<RequestStatus>({status: 'idle'})
-  const [assessment, setAssessment] = useState<string | undefined>(undefined)
+  const [assessment, setAssessment] = useState<Assessment | undefined>(undefined)
 
   const getAssessment = (text : string) => {
     setRequestStatus({
@@ -29,7 +31,7 @@ const App : React.FC<PropsWithChildren<props>> = () => {
       body: JSON.stringify(body)
     })
       .then(res => res.json())
-      .then(res => console.log('res', res))
+      .then(res => setAssessment(res))
       .catch( err => console.log('err', err))
   }
   return (
@@ -48,7 +50,7 @@ const App : React.FC<PropsWithChildren<props>> = () => {
         getAssessment={getAssessment}
         />
         {assessment
-          ? <p>{assessment}</p>
+          ? <AssessmentDisplay assessment={assessment} />
           : <p>info</p>}
     </Wrapper>
   )

@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
-import { motion } from "framer-motion";
 
 import Textarea from './Components/Textarea';
 import { RequestProp } from '../../types';

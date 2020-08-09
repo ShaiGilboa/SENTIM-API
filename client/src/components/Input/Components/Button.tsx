@@ -11,20 +11,6 @@ const Button = styled(motion.button)`
   margin: 5px auto;
   border-radius: 10px;
   outline: none;
-
-  /* &:focus {
-    outline-width: 0;
-
-
-    border: none;
-    -moz-outline-style: none;
-  }
-  &:active {
-    outline-width: 0;
-
-    border: none;
-    -moz-outline-style: none;
-  } */
 `;
 
 export default Button;
