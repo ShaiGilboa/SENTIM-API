@@ -27,7 +27,7 @@ const Topbar : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequest
 
   return (
     <Wrapper data-css='Topbar'>
-      <Title>Welcome to Sentiment Checker!</Title>
+      <Title><span>Welcome to </span>Sentiment Checker</Title>
       <Secondary>{secondary()}</Secondary>
     </Wrapper>
   )
