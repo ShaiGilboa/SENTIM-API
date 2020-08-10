@@ -14,6 +14,7 @@ const Title = styled.h2`
       display: inline;
     }
   }
+  
 `;
 
 export default Title;
