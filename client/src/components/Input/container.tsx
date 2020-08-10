@@ -19,10 +19,11 @@ const Input : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRequestS
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     getAssessment('');
-    if(text.length){
+    if(text.replace(/\s/g, '').length){
       getAssessment(text);
     } else {
       setRequestStatus({status: 'error', error: 'please enter a sentiment to check'})
+      setText('')
     }
   } 
 
