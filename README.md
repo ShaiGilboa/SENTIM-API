@@ -1,5 +1,5 @@
 # SENTIM-API
-Using the <a href="https://sentim-api.herokuapp.com/">SENTIM-API</a> Developed by: <a href="https://github.com/sharadcodes/" target="_blank">Sharad Raj</a></p> to create an app that tests the "sentiment" of text.
+Using the <a href="https://sentim-api.herokuapp.com/">SENTIM-API</a> Developed by: <a href="https://github.com/sharadcodes/" target="_blank">Sharad Raj</a> to create an app that tests the "sentiment" of text.
 
 <a href="https://sentiment-checker.shaigilboa.vercel.app/">Check it out!</a>
 
