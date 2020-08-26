@@ -11,7 +11,9 @@ const Description : React.FC<PropsWithChildren<props>> = ({ requestStatus, setRe
 
   return (
     <Wrapper data-css='Description'>
-      Input the text you wish to check, and using the <a href="https://sentim-api.herokuapp.com/" target="_blank" rel="noopener noreferrer">SENTIM-API</a> <span>Developed by: <a href="https://github.com/sharadcodes/" target="_blank">Sharad Raj</a></span> you will get a score on the sentiment:
+      <p>Input the text you wish to check, and get a score on the sentiment:</p>
+      <p>Using: <a href="https://sentim-api.herokuapp.com/" target="_blank" rel="noopener noreferrer">SENTIM-API</a> <span>Developed by: <a href="https://github.com/sharadcodes/" target="_blank">Sharad Raj</a></span></p>
+       
     </Wrapper>
   )
 }
@@ -35,5 +37,10 @@ const Wrapper = styled.p`
   span {
     font-style: italic;
     font-size: 16px;
+    color: black;
+  }
+  
+  p{
+    color: #000;
   }
 `;
